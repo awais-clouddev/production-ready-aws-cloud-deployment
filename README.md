@@ -281,7 +281,6 @@ This project implements a production-oriented AWS architecture while remaining a
 | [Troubleshooting](docs/troubleshooting.md) | Real deployment failures and resolutions |
 | [Validation](docs/validation.md) | Infrastructure and application verification |
 | [Cost Management](docs/cost-management.md) | Cost controls and cleanup strategy |
-| [Project Walkthrough](docs/project-walkthrough.md) | Complete engineering walkthrough |
 
 ---
 
@@ -303,7 +302,6 @@ production-ready-aws-cloud-deployment/
 │   ├── troubleshooting.md
 │   ├── validation.md
 │   ├── cost-management.md
-│   └── project-walkthrough.md
 └── screenshots/
     └── AWS deployment and validation evidence
 ```
