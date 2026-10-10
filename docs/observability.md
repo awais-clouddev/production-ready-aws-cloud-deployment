@@ -78,7 +78,7 @@ Alarm configuration:
 - Datapoints to alarm: `1 of 1`
 - Missing data: treated as missing
 
-The alarm provides an operational signal when average API service CPU utilization exceeds 80% during a five-minute evaluation period.
+The alarm was monitoring-only, with no SNS notification or automated action attached. It provides an operational signal when average API service CPU utilization exceeds 80% during a five-minute evaluation period.
 
 ![CloudWatch CPU Alarm](../screenshots/12-cloudwatch-api-cpu-alarm.png)
 

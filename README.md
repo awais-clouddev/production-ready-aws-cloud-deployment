@@ -18,6 +18,8 @@ https://github.com/awais-clouddev/containerized-help-desk-platform
 
 ![AWS Deployment Architecture](architecture/aws-deployment-architecture.png)
 
+> **Architecture note:** Amazon ECR is shown within the VPC boundary for visual simplicity. ECR is actually an AWS regional managed service outside the VPC. ECS/Fargate tasks pull container images from ECR.
+
 The platform is deployed in the AWS **Asia Pacific (Mumbai) — `ap-south-1`** Region using a custom VPC with public, private application, and private data subnets across multiple Availability Zones.
 
 User traffic enters through an internet-facing Application Load Balancer. The ALB routes frontend traffic to the Nginx ECS/Fargate service and `/api/*` traffic to the FastAPI/Uvicorn ECS/Fargate service. The API communicates privately with Amazon RDS PostgreSQL and Amazon ElastiCache for Valkey.
@@ -174,6 +176,8 @@ The CloudWatch alarm `project3-api-high-cpu-alarm` monitors ECS API service CPU 
 
 ![CloudWatch CPU Alarm](screenshots/12-cloudwatch-api-cpu-alarm.png)
 
+The CPU alarm was monitoring-only; no SNS notification or automated action was attached.
+
 ---
 
 ## End-to-End Validation
@@ -196,6 +200,8 @@ Validation confirmed:
 ### Application Validation
 
 ![Help Desk Application Validation](screenshots/13-helpdesk-application-validation.png)
+
+> **Application UI note:** The frontend was reused from Project 2 and retains Docker Compose/Redis terminology. In this AWS deployment, ECS/Fargate ran the containers, and Amazon ElastiCache for Valkey provided Redis-compatible caching.
 
 The running application confirmed successful connectivity across the application, database, and caching layers and returned cached ticket data using `redis-cache` as the data source.
 
