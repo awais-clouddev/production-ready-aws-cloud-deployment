@@ -1,4 +1,4 @@
-# Production-Ready AWS Cloud Deployment
+# Production-Oriented AWS Cloud Deployment
 
 > Production-oriented deployment of a containerized Help Desk platform on AWS using ECS Fargate, Application Load Balancing, private networking, Amazon RDS PostgreSQL, Amazon ElastiCache for Valkey, Amazon ECR, and Amazon CloudWatch.
 
@@ -233,6 +233,8 @@ These troubleshooting incidents demonstrate operational diagnosis across ECS, Cl
 Detailed troubleshooting documentation: [docs/troubleshooting.md](docs/troubleshooting.md)
 
 ---
+
+> **Availability limitation:** Although the VPC spans two Availability Zones, each ECS service was validated with only one running task. The deployment therefore does not demonstrate automatic application failover or full high availability.
 
 ## Production Hardening & Operational Considerations
 

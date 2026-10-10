@@ -18,7 +18,7 @@ The following practices were used during the project:
 - Small RDS and ElastiCache instance classes were used.
 - CloudWatch log retention was limited to one week.
 - Unnecessary failed CloudFormation stacks were removed after troubleshooting.
-- Resources are scheduled for deletion after documentation and portfolio evidence are complete.
+- The temporary AWS deployment was subsequently decommissioned to avoid ongoing infrastructure charges.
 - Billing information and payment-card details are not stored in this public repository.
 
 ---
@@ -33,7 +33,7 @@ During project validation, the AWS Billing console showed:
 
 The zero estimated payment did not mean that AWS resources had no underlying usage cost. Running infrastructure still consumed billable AWS services, with credits covering the temporary project usage.
 
-For this reason, final resource cleanup remains mandatory.
+The temporary deployment was subsequently decommissioned. This document does not independently verify the current AWS account billing state.
 
 ---
 
