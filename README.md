@@ -6,7 +6,7 @@ See [historical evidence scope](docs/evidence-scope.md) and [production-control 
 
 > **Deployment status:** This portfolio deployment has been decommissioned. Screenshots and validation results document the original implementation. Reference configurations are provided for review; the environment is not currently hosted.
 
-> Production-oriented deployment of a containerized Help Desk platform on AWS using ECS Fargate, Application Load Balancing, private networking, Amazon RDS PostgreSQL, Amazon ElastiCache for Valkey, Amazon ECR, and Amazon CloudWatch.
+> Designed, deployed and validated a containerized application on AWS using private networking, ECS Fargate, ALB, RDS, ElastiCache and CloudWatch.
 
 ## Overview
 
