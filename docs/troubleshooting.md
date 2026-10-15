@@ -1,5 +1,7 @@
 # Troubleshooting & Incident Resolution
 
+> **Deployment status:** Historical portfolio deployment, subsequently decommissioned. The author reports that paid AWS services were deleted. Screenshots and successful runtime results describe the earlier deployment, not a currently running environment. Current account inventory and billing have not been independently verified. This maintenance work is offline and does not recreate AWS resources.
+
 ## Purpose
 
 This document records real failures encountered during the AWS deployment, how each problem was diagnosed, and the corrective action taken.

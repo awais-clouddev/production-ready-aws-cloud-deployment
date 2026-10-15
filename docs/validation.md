@@ -1,5 +1,11 @@
 # Testing & Validation Evidence
 
+## Evidence Qualification
+
+See [historical evidence scope](evidence-scope.md) and [production-control status](production-controls.md). Security-group tables record documented intent; the saved group-list screenshot does not establish exact rules or denied-path enforcement. Historical results are not current live checks.
+
+> **Deployment status:** Historical portfolio deployment, subsequently decommissioned. The author reports that paid AWS services were deleted. Screenshots and successful runtime results describe the earlier deployment, not a currently running environment. Current account inventory and billing have not been independently verified. This maintenance work is offline and does not recreate AWS resources.
+
 ## Purpose
 
 This document records the infrastructure and application validation performed after deployment to confirm that the AWS environment was working end to end.
@@ -10,7 +16,7 @@ Validation was performed across networking, load balancing, ECS/Fargate, Postgre
 
 ## Validation Summary
 
-| Validation Area | Result |
+| Validation Area | Reported historical result; not rerun |
 |---|---|
 | VPC and subnet architecture | Passed |
 | Security-group boundaries | Passed |
@@ -53,7 +59,7 @@ The VPC also showed the Internet Gateway, NAT Gateway, and associated route-tabl
 
 Security groups were reviewed to confirm the intended service-to-service trust boundaries.
 
-Validated traffic paths:
+Documented intended traffic paths; complete rule exports and denied-path tests are not retained:
 
 - Internet -> ALB on port `80`
 - ALB -> frontend on port `80`
@@ -222,7 +228,7 @@ The application showed:
 
 `Data source: redis-cache`
 
-This confirmed that cached ticket data was being returned through the Valkey Redis-compatible cache layer.
+This records the application's historical cache-source indication. It is not a newly repeated cache correctness or failure test.
 
 ![Application Validation](../screenshots/13-helpdesk-application-validation.png)
 

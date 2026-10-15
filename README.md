@@ -1,5 +1,11 @@
 # Production-Oriented AWS Cloud Deployment
 
+## Evidence Qualification
+
+See [historical evidence scope](docs/evidence-scope.md) and [production-control status](docs/production-controls.md). Security-group tables record documented intent; the saved group-list screenshot does not establish exact rules or denied-path enforcement. Historical results are not current live checks.
+
+> **Deployment status:** Historical portfolio deployment, subsequently decommissioned. The author reports that paid AWS services were deleted. Screenshots and successful runtime results describe the earlier deployment, not a currently running environment. Current account inventory and billing have not been independently verified. This maintenance work is offline and does not recreate AWS resources.
+
 > Production-oriented deployment of a containerized Help Desk platform on AWS using ECS Fargate, Application Load Balancing, private networking, Amazon RDS PostgreSQL, Amazon ElastiCache for Valkey, Amazon ECR, and Amazon CloudWatch.
 
 ## Overview
@@ -331,3 +337,36 @@ This project builds on the containerized Help Desk platform from Project 2 and m
 **Muhammad Awais**
 
 Cloud & DevOps Engineering Portfolio
+
+## Application Version and Schema Reference
+
+See [application provenance and schema](docs/application-provenance.md). The historical deployed image/source versions are unknown. The pinned current Docker reference must not be presented as a newly verified AWS deployment.
+
+## Historical Availability Boundary
+
+The ECS screenshot shows one running task per service. Two-AZ networking
+does not establish redundant application instances or tested failover.
+
+The Valkey screenshot shows one node, Multi-AZ disabled and automatic
+failover disabled. Database failover was not demonstrated by the retained
+evidence. No current runtime availability is asserted.
+
+## Offline Maintenance and Reference Material
+
+- [Application provenance and schema](docs/application-provenance.md)
+- [Historical evidence scope](docs/evidence-scope.md)
+- [Production-control status](docs/production-controls.md)
+- [Reference configuration](reference/README.md)
+- [Proposed recovery runbook](docs/recovery-runbook.md)
+
+Run local checks from the repository root:
+
+    python3 scripts/validate_offline.py
+
+These checks inspect JSON, selected configuration relationships, provenance,
+local links and preservation of historical images. They do not contact AWS,
+validate service API acceptance, deploy infrastructure or establish live
+networking, IAM enforcement, TLS, notification delivery, recovery or failover.
+
+The reference files are newly authored examples, not complete IaC or exports
+of deleted resources. Unknown historical values remain explicitly unknown.

@@ -1,0 +1,55 @@
+{
+  "family": "project3-helpdesk-api-reference",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::<ACCOUNT_ID>:role/<ECS_EXECUTION_ROLE>",
+  "containerDefinitions": [
+    {
+      "name": "api",
+      "image": "<ACCOUNT_ID>.dkr.ecr.ap-south-1.amazonaws.com/project3-helpdesk-api@sha256:<API_IMAGE_DIGEST>",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 8000,
+          "protocol": "tcp"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/project3-helpdesk-api",
+          "awslogs-region": "ap-south-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "environment": [
+        {
+          "name": "DATABASE_HOST",
+          "value": "<RDS_ENDPOINT>"
+        },
+        {
+          "name": "DATABASE_NAME",
+          "value": "helpdesk"
+        },
+        {
+          "name": "DATABASE_USER",
+          "value": "<APPLICATION_DATABASE_USER>"
+        },
+        {
+          "name": "REDIS_HOST",
+          "value": "<VALKEY_ENDPOINT>"
+        }
+      ],
+      "secrets": [
+        {
+          "name": "DATABASE_PASSWORD",
+          "valueFrom": "arn:aws:secretsmanager:ap-south-1:<ACCOUNT_ID>:secret:<DATABASE_PASSWORD_SECRET>"
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # Architecture & AWS Service Design
 
+> **Deployment status:** Historical portfolio deployment, subsequently decommissioned. The author reports that paid AWS services were deleted. Screenshots and successful runtime results describe the earlier deployment, not a currently running environment. Current account inventory and billing have not been independently verified. This maintenance work is offline and does not recreate AWS resources.
+
 ## Purpose
 
 This document describes the AWS architecture used to deploy the containerized Help Desk platform and explains how the major AWS services interact.
@@ -222,3 +224,12 @@ The deployed design demonstrates:
 - [Observability](observability.md)
 - [Troubleshooting](troubleshooting.md)
 - [Validation](validation.md)
+
+## Historical Availability Boundary
+
+The ECS screenshot shows one running task per service. Two-AZ networking
+does not establish redundant application instances or tested failover.
+
+The Valkey screenshot shows one node, Multi-AZ disabled and automatic
+failover disabled. Database failover was not demonstrated by the retained
+evidence. No current runtime availability is asserted.

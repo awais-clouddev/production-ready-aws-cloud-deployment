@@ -1,5 +1,7 @@
 # Cost Management & Operational Considerations
 
+> **Deployment status:** Historical portfolio deployment, subsequently decommissioned. The author reports that paid AWS services were deleted. Screenshots and successful runtime results describe the earlier deployment, not a currently running environment. Current account inventory and billing have not been independently verified. This maintenance work is offline and does not recreate AWS resources.
+
 ## Purpose
 
 This document records the cost-awareness practices used during the AWS deployment and the planned resource-cleanup process for this temporary portfolio environment.
@@ -71,9 +73,9 @@ Deleting infrastructure before completing these activities would remove useful v
 
 ## Final Cleanup Plan
 
-After all portfolio work is complete, cleanup will be performed in dependency-aware order.
+The author reports that paid services were deleted. The following is a reference cleanup checklist, not an independently verified deletion log.
 
-Planned actions include:
+Reference checks for a future account review include:
 
 1. Stop and remove ECS/Fargate services and running tasks.
 2. Delete the Application Load Balancer after application evidence is complete.
@@ -131,7 +133,7 @@ For a long-lived production environment, cost optimization could include:
 
 ## Final Cost Verification
 
-The project will not be considered fully complete until:
+The following account-level checks cannot be established from this repository alone. They are not prerequisites for completing this offline documentation review:
 
 - Chargeable temporary resources have been removed.
 - ECS/Fargate tasks are no longer running.

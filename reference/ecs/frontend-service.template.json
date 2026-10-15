@@ -1,0 +1,35 @@
+{
+  "cluster": "project3-helpdesk-cluster",
+  "serviceName": "project3-frontend-service",
+  "taskDefinition": "<FRONTEND_TASK_DEFINITION_ARN>",
+  "desiredCount": 1,
+  "launchType": "FARGATE",
+  "networkConfiguration": {
+    "awsvpcConfiguration": {
+      "subnets": [
+        "<PRIVATE_APP_SUBNET_A>",
+        "<PRIVATE_APP_SUBNET_B>"
+      ],
+      "securityGroups": [
+        "<FRONTEND_SECURITY_GROUP_ID>"
+      ],
+      "assignPublicIp": "DISABLED"
+    }
+  },
+  "loadBalancers": [
+    {
+      "targetGroupArn": "<FRONTEND_TARGET_GROUP_ARN>",
+      "containerName": "frontend",
+      "containerPort": 80
+    }
+  ],
+  "healthCheckGracePeriodSeconds": 60,
+  "deploymentConfiguration": {
+    "minimumHealthyPercent": 100,
+    "maximumPercent": 200,
+    "deploymentCircuitBreaker": {
+      "enable": true,
+      "rollback": true
+    }
+  }
+}

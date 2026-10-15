@@ -1,5 +1,7 @@
 # AWS Deployment Workflow
 
+> **Deployment status:** Historical portfolio deployment, subsequently decommissioned. The author reports that paid AWS services were deleted. Screenshots and successful runtime results describe the earlier deployment, not a currently running environment. Current account inventory and billing have not been independently verified. This maintenance work is offline and does not recreate AWS resources.
+
 ## Purpose
 
 This document records the end-to-end deployment workflow used to move the containerized Help Desk workload from the local Docker environment into AWS.
@@ -284,7 +286,7 @@ At the end of deployment validation:
 - CloudWatch logs: Verified
 - CPU alarm: Configured
 
-The AWS environment remained running temporarily so that architecture evidence and repository documentation could be completed before final resource cleanup.
+The AWS environment remained running temporarily for evidence capture. The author subsequently reported deleting the paid services. The state listed above is historical, not current.
 
 ---
 
@@ -296,3 +298,7 @@ The AWS environment remained running temporarily so that architecture evidence a
 - [Observability](observability.md)
 - [Troubleshooting](troubleshooting.md)
 - [Validation](validation.md)
+
+## Application Version and Schema Reference
+
+See [application provenance and schema](application-provenance.md). The historical deployed image/source versions are unknown. The pinned current Docker reference must not be presented as a newly verified AWS deployment.

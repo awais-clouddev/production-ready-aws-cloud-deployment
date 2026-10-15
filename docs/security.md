@@ -1,5 +1,11 @@
 # Security Architecture
 
+## Evidence Qualification
+
+See [historical evidence scope](evidence-scope.md) and [production-control status](production-controls.md). Security-group tables record documented intent; the saved group-list screenshot does not establish exact rules or denied-path enforcement. Historical results are not current live checks.
+
+> **Deployment status:** Historical portfolio deployment, subsequently decommissioned. The author reports that paid AWS services were deleted. Screenshots and successful runtime results describe the earlier deployment, not a currently running environment. Current account inventory and billing have not been independently verified. This maintenance work is offline and does not recreate AWS resources.
+
 ## Purpose
 
 This document describes the security controls implemented for the AWS deployment, focusing on network isolation, security-group boundaries, private application workloads, managed data-service protection, and AWS access control.

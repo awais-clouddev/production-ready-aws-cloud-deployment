@@ -1,0 +1,48 @@
+{
+  "classification": "documented-intent-not-exported-security-group-rules",
+  "region": "ap-south-1",
+  "historical_vpc_name": "project3-vpc",
+  "subnet_tiers": {
+    "public": [
+      "project3-public-a",
+      "project3-public-b"
+    ],
+    "application": [
+      "project3-private-app-a",
+      "project3-private-app-b"
+    ],
+    "data": [
+      "project3-private-data-a",
+      "project3-private-data-b"
+    ]
+  },
+  "documented_ingress_intent": [
+    {
+      "destination": "project3-alb-sg",
+      "source": "0.0.0.0/0",
+      "tcp_port": 80
+    },
+    {
+      "destination": "project3-frontend-sg",
+      "source": "project3-alb-sg",
+      "tcp_port": 80
+    },
+    {
+      "destination": "project3-api-sg",
+      "source": "project3-alb-sg",
+      "tcp_port": 8000
+    },
+    {
+      "destination": "project3-rds-sg",
+      "source": "project3-api-sg",
+      "tcp_port": 5432
+    },
+    {
+      "destination": "project3-redis-sg",
+      "source": "project3-api-sg",
+      "tcp_port": 6379
+    }
+  ],
+  "exact_historical_cidrs_routes_egress_and_iam_policies": null,
+  "live_network_boundary_verification": "not-performed"
+}

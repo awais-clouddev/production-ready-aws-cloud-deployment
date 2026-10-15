@@ -1,0 +1,11 @@
+{
+  "classification": "offline-reference-not-historical-deployment-export",
+  "source_repository": "https://github.com/awais-clouddev/containerized-help-desk-platform",
+  "reference_source_commit": "8d7345d675262a7042836594c39b57c5fa0fc3b2",
+  "schema_source_path": "database/init.sql",
+  "schema_reference_path": "reference/database/schema.sql",
+  "schema_sha256": "04da80ec0ea90eaa3e078da53773daf866fa0ea2fd3dd66fe8aad2994bef0082",
+  "historically_deployed_source_commit": null,
+  "historically_deployed_image_digests": null,
+  "live_aws_verification": "not-performed-resources-decommissioned"
+}
