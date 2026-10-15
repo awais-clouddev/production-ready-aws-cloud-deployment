@@ -4,7 +4,7 @@
 
 See [historical evidence scope](docs/evidence-scope.md) and [production-control status](docs/production-controls.md). Security-group tables record documented intent; the saved group-list screenshot does not establish exact rules or denied-path enforcement. Historical results are not current live checks.
 
-> **Deployment status:** Historical portfolio deployment, subsequently decommissioned. The author reports that paid AWS services were deleted. Screenshots and successful runtime results describe the earlier deployment, not a currently running environment. Current account inventory and billing have not been independently verified. This maintenance work is offline and does not recreate AWS resources.
+> **Deployment status:** This portfolio deployment has been decommissioned. Screenshots and validation results document the original implementation. Reference configurations are provided for review; the environment is not currently hosted.
 
 > Production-oriented deployment of a containerized Help Desk platform on AWS using ECS Fargate, Application Load Balancing, private networking, Amazon RDS PostgreSQL, Amazon ElastiCache for Valkey, Amazon ECR, and Amazon CloudWatch.
 
